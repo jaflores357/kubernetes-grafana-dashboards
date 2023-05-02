@@ -1,0 +1,593 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "$$hashKey": "object:2875",
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": 11074,
+    "graphTooltip": 0,
+    "id": 11,
+    "links": [
+      {
+        "$$hashKey": "object:2300",
+        "icon": "bolt",
+        "tags": [],
+        "targetBlank": true,
+        "title": "Update",
+        "tooltip": "Update dashboard",
+        "type": "link",
+        "url": "https://grafana.com/grafana/dashboards/11074"
+      },
+      {
+        "$$hashKey": "object:2301",
+        "icon": "question",
+        "tags": [],
+        "targetBlank": true,
+        "title": "GitHub",
+        "tooltip": "more dashboard",
+        "type": "link",
+        "url": "https://github.com/starsliao"
+      },
+      {
+        "$$hashKey": "object:2302",
+        "asDropdown": true,
+        "icon": "external link",
+        "tags": [],
+        "targetBlank": true,
+        "title": "",
+        "type": "dashboards"
+      }
+    ],
+    "liveNow": false,
+    "panels": [
+      {
+        "columns": [],
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "description": "",
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 10,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 199,
+        "showHeader": true,
+        "sort": {
+          "col": 24,
+          "desc": false
+        },
+        "styles": [
+          {
+            "$$hashKey": "object:1600",
+            "alias": "Hostname",
+            "align": "auto",
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 1,
+            "link": false,
+            "linkTooltip": "",
+            "linkUrl": "",
+            "mappingType": 1,
+            "pattern": "pod",
+            "thresholds": [],
+            "type": "string",
+            "unit": "bytes"
+          },
+          {
+            "$$hashKey": "object:1601",
+            "alias": "Namespace",
+            "align": "auto",
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "link": false,
+            "linkTargetBlank": false,
+            "linkTooltip": "Browse host details",
+            "linkUrl": "",
+            "mappingType": 1,
+            "pattern": "namespace",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "$$hashKey": "object:1602",
+            "alias": "Memory",
+            "align": "auto",
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "link": false,
+            "mappingType": 1,
+            "pattern": "Value #B",
+            "thresholds": [],
+            "type": "number",
+            "unit": "bytes"
+          },
+          {
+            "$$hashKey": "object:1603",
+            "alias": "CPU",
+            "align": "auto",
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "mappingType": 1,
+            "pattern": "Value #C",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "$$hashKey": "object:1606",
+            "alias": "Status",
+            "align": "auto",
+            "colorMode": "cell",
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "#C4162A",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "Value #D",
+            "thresholds": [
+              "0",
+              "1"
+            ],
+            "type": "string",
+            "unit": "none",
+            "valueMaps": [
+              {
+                "$$hashKey": "object:300",
+                "text": "OK",
+                "value": "1"
+              },
+              {
+                "$$hashKey": "object:302",
+                "text": "ERROR",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "$$hashKey": "object:2433",
+            "alias": "Memory %",
+            "align": "auto",
+            "colorMode": "cell",
+            "colors": [
+              "rgba(50, 172, 45, 0.97)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(245, 54, 54, 0.9)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "mappingType": 1,
+            "pattern": "Value #E",
+            "thresholds": [
+              "70",
+              "90"
+            ],
+            "type": "number",
+            "unit": "percent"
+          },
+          {
+            "$$hashKey": "object:1615",
+            "alias": "",
+            "align": "right",
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "decimals": 2,
+            "pattern": "/.*/",
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          }
+        ],
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "expr": "kube_pod_container_info{container!=\"istio-proxy\",namespace=~\"$namespace\"} - 0",
+            "format": "table",
+            "instant": true,
+            "interval": "",
+            "legendFormat": "主机名",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "expr": "sum(container_memory_working_set_bytes{container!=\"istio-proxy\",namespace=~\"$namespace\",container!=\"\"}) by (container) > 0",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "__auto",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "expr": "max(rate(container_cpu_usage_seconds_total{container!=\"istio-proxy\",namespace=~\"$namespace\",container!=\"\"}[5m])) by (container)",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "总核数",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "expr": "kube_pod_container_status_running{container!=\"istio-proxy\",namespace=~\"$namespace\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "__auto",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(container_memory_working_set_bytes{container!=\"istio-proxy\",namespace=~\"$namespace\"}) by (container) / sum(kube_pod_container_resource_limits{resource=\"memory\",container!=\"istio-proxy\",namespace=~\"$namespace\"}) by (container) * 100",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "__auto",
+            "range": false,
+            "refId": "E"
+          }
+        ],
+        "title": "Services",
+        "transform": "table",
+        "type": "table-old"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 10
+        },
+        "id": 201,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "max(rate(container_cpu_usage_seconds_total{container!=\"istio-proxy\",namespace=~\"$namespace\"}[5m])) by (container)",
+            "instant": false,
+            "legendFormat": "{{container}}",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "CPU",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 10
+        },
+        "id": 203,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "editorMode": "code",
+            "expr": "max(container_memory_working_set_bytes{container!=\"istio-proxy\",namespace=~\"$namespace\"} / (1024*1024)) by (container)",
+            "legendFormat": "{{container}}",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Memory",
+        "type": "timeseries"
+      },
+      {
+        "collapsed": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 18
+        },
+        "id": 187,
+        "panels": [],
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFA97CFB590B2093"
+            },
+            "refId": "A"
+          }
+        ],
+        "title": "Services",
+        "type": "row"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 37,
+    "style": "dark",
+    "tags": [
+      "Prometheus",
+      "node_exporter",
+      "StarsL.cn"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "definition": "label_values(kube_pod_info, namespace)",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "namespace",
+          "options": [],
+          "query": {
+            "query": "label_values(kube_pod_info, namespace)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-12h",
+      "to": "now"
+    },
+    "timepicker": {
+      "hidden": false,
+      "now": true,
+      "refresh_intervals": [
+        "15s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "browser",
+    "title": "Pods",
+    "uid": "pods",
+    "version": 12,
+    "weekStart": ""
+  }
